@@ -18,4 +18,4 @@ ControlCenter.publish('test/foo', { msg: 'hello,this is a msg' });
 
 ControlCenter.unsubscribe('test/foo', foo);
 
-ControlCenter.publish('test/foo', { msg: 'this should not be seen' })
+ControlCenter.publish('test/foo', { msg: 'this should not be seen' });
