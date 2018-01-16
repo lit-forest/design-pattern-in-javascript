@@ -20,7 +20,7 @@ let chart = factory('pie');
 
 console.log(chart);
 
-
+// 创建DOM的例子
 function createHTMLEl() {
 	function createInput(type) {
 		let el = document.createElement('input');
