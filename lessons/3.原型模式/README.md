@@ -117,4 +117,13 @@ MyClass.prototype.myMethod = function () {
 ```
 
 ### 原型模式
-原型模式是指用原型实例指向创建对象的种类，并且通过拷贝这些原型创建新的对象，原型模式在JavaScript里的使用简直是无处不在，其它很多模式有很多也是基于`prototype`的,上面的讲解中，我们多次提到了`类`的概念，但是JavaScript本质上避免了`class`的概念，ES6中的`class`只是个语法糖，本质上还是使用原型，JavaScript只是简单的从现有对象进行拷贝来创建新的对象，我们应该尽量使用[对象组合](https://lit-forest.github.io/blog/2017/12/10/composing-software-intro.html)的方式去构建对象，在JavaScript中应该尽量使用`继承`的思路，使用`继承`脑袋去思考`原型`只会把简单的问题弄得越来越复杂。
+原型模式是指用原型实例指向创建对象的种类，并且通过拷贝这些原型创建新的对象，原型模式在JavaScript里的使用简直是无处不在，其它很多模式有很多也是基于`prototype`的,上面的讲解中，我们多次提到了`类`的概念，但是JavaScript本质上避免了`class`的概念，ES6中的`class`只是个语法糖，本质上还是使用原型，关于这一点我们从JavaScript的作者Brendan Eich后来的访谈中也能看出些许：
+>"我并非骄傲，只不过是很高兴我选择 Scheme 式的一等函数以及 Self 式（尽管很怪异）的原型作为主要因素。至于 Java 的影响，主要是把数据分成基本类型和对象类型两种（比如字符串和 String 对象），以及引入了Y2K 日期问题，这真是不幸。我把最终进入 JavaScript 中的一些"不幸"类似 Java 的特性加入到如下列表中":
+
+* 构造器函数和`new`关键字
+* `class`关键字加上单一祖先的`extend`作为主要继承机制
+* 用户的偏好是把`class`当作一个`静态`类型(实际上完全不是)。
+
+JavaScript只是简单的从现有对象进行拷贝来创建新的对象，我们应该尽量使用[对象组合](https://lit-forest.github.io/blog/2017/12/10/composing-software-intro.html)的方式去构建对象，在JavaScript中应该尽量避免使用`继承`的思路。
+
+使用`继承`脑袋去思考`原型`只会把简单的问题弄得越来越复杂。
