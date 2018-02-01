@@ -6,6 +6,24 @@ var utils = {
 }
 
 // 高级一点的只创建一个实例，在需要的时候创建
+// 懒汉模式
+// var getCEO = (function () {
+// 	var instance;
+// 	var createCEO = function () {
+// 		return instance = {
+// 			name: '霸道总裁',
+// 			age: '35',
+// 			sex: 'male'
+// 		}
+// 	}
+// 	return {
+// 		getInstance: function () {
+// 			return instance || (instance = createCEO())
+// 		}
+// 	}
+// }())
+
+// 饿汉模式
 var getCEO = (function () {
 	var instance;
 	var createCEO = function () {
@@ -15,9 +33,10 @@ var getCEO = (function () {
 			sex: 'male'
 		}
 	}
+	instance = createCEO();
 	return {
 		getInstance: function () {
-			return instance || (instance = createCEO())
+			return instance;
 		}
 	}
 }())
